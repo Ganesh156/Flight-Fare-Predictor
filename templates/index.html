@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="static/assets/images/favicon.png" />
+	<link rel="apple-touch-icon" href="static/assets/images/favicon.png" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="static/assets/font-awesome/css/all.css">
+	<link rel="stylesheet" href="static/assets/fonts/fonts.css">
+	<link rel="stylesheet" href="static/assets/css/style.css">
+
+	<title>FlightFare</title>
+</head>
+
+<body>
+
+	<header>
+		<!-- Navbar -->
+		<nav class="navbar navbar-light bg-light shadow">
+			<div class="navbar-logo ml-3">
+				<a class="navbar-brand" href="#">
+					<h2 class="text-royal-blue">FlightFare</h2>
+					<img class="ml-2" src="static/assets/images/logo.png" alt="Logo" width="50" height="40">
+				</a>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Intro -->
+	<section class="intro-section section-container">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-5 col-lg-6 order-md-2">
+					<!-- Image -->
+					<img src="static/assets/images/e-ticket-booking-buying-service-presentation_82574-9012.jpg"
+						class="img-fluid" alt="flight ticket">
+				</div>
+				<div class="col-12 col-md-7 col-lg-6 order-md-1 mt-xs-5">
+
+					<!-- Heading -->
+					<h1 class="text-md-left">
+						Welcome to <span class="text-royal-blue text-uppercase">Flight Fare Predictor</span>
+					</h1>
+
+					<p class="lead text-left text-md-left text-muted mb-6 mb-lg-8 text-blue-mute">
+						(Description of project) Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+						voluptatibus veniam ipsam incidunt accusamus, perferendis labore repudiandae est adipisci optio
+						ipsa ratione totam, praesentium culpa aperiam! Nobis odit ducimus at.
+					</p>
+
+					<div class="text-md-left mt-5">
+						<a href="#fare-calculator-heading"
+							class="btn btn-primary btn-royal-blue shadow lift mr-1 text-uppercase">
+							Calculate fare
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="fare-calculator-heading" class="calculator-heading">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12">
+					<div class="">
+						<h1 class="text-uppercase">Calculate the <span class="text-royal-blue">flight fare</span></h1>
+						<p class="lead text-muted">
+							Please enter your flight details in the below form to get the fare prediction
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Calculator -->
+	<section id="fare-calculator" class="intro-section calculator-container bg-calculator">
+
+		<div class="calculator-overlay">
+
+		</div>
+		<div class="container form-card">
+			<div class="row align-items-center no-gutters">
+				<div class="col-12 col-md-6">
+
+					<!-- Card -->
+					<div class="card card-no-border rounded-lg shadow-lg mb-6 mb-md-0" style="z-index: 1;">
+
+						<!-- Body -->
+						<form class="needs-validation" action="\predict" method="POST" novalidate>
+							<div class="card-body py-6 py-md-8">
+								<h5 class="text-center text-blue-mute">Enter <span class="text-uppercase">flight</span>
+									Details</h5>
+								<div class="row prediction-bg mt-4">
+									<div class="col-11">
+
+										<div class="form-row">
+											<div class="col-md-6 mb-3">
+												<label for="DepartureDate">Departure Date</label>
+												<input type="datetime-local" class="form-control" id="DepartureDate"
+													name="Dep_Time" required>
+												<div class="valid-feedback">
+													Looks good!
+												</div>
+												<div class="invalid-feedback">
+													Please provide a departure date.
+												</div>
+											</div>
+											<div class="col-md-6 mb-3">
+												<label for="ArrivalDate">Arrival Date</label>
+												<input type="datetime-local" class="form-control" id="ArrivalDate"
+													name="Arrival_Time" required>
+												<div class="valid-feedback">
+													Looks good!
+												</div>
+												<div class="invalid-feedback">
+													Please provide an arrival date.
+												</div>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="col-md-6 mb-3">
+												<label for="source">Source</label>
+												<select class="custom-select" id="source" required name="Source">
+													<option selected disabled value="">Choose...</option>
+													<option value="Delhi">Delhi</option>
+													<option value="Kolkata">Kolkata</option>
+													<option value="Mumbai">Mumbai</option>
+													<option value="Chennai">Chennai</option>
+												</select>
+												<div class="valid-feedback">
+													Looks good!
+												</div>
+												<div class="invalid-feedback">
+													Please provide a valid city.
+												</div>
+											</div>
+											<div class="col-md-6 mb-3">
+												<label for="destination">Destination</label>
+												<select class="custom-select" id="destination" name="Destination"
+													required>
+													<option selected disabled value="">Choose...</option>
+													<option value="Cochin">Cochin</option>
+													<option value="Delhi">Delhi</option>
+													<option value="New Delhi">New Delhi</option>
+													<option value="Hyderabad">Hyderabad</option>
+													<option value="Kolkata">Kolkata</option>
+												</select>
+												<div class="valid-feedback">
+													Looks good!
+												</div>
+												<div class="invalid-feedback">
+													Please provide a valid city.
+												</div>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="col-md-6 mb-3">
+												<label for="stoppage">Stoppage</label>
+												<select class="custom-select" id="stoppage" name="stops" required>
+													<option selected disabled value="">Choose...</option>
+													<option value="0">Non-Stop</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+												</select>
+												<div class="valid-feedback">
+													Looks good!
+												</div>
+												<div class="invalid-feedback">
+													Please provide a valid city.
+												</div>
+											</div>
+											<div class="col-md-6 mb-3">
+												<label for="airline">Airline</label>
+												<select class="custom-select" id="airline" name="airline" required>
+													<option selected disabled value="">Choose...</option>
+													<option value="Jet Airways">Jet Airways</option>
+													<option value="IndiGo">IndiGo</option>
+													<option value="Air India">Air India</option>
+													<option value="Multiple carriers">Multiple carriers</option>
+													<option value="SpiceJet">SpiceJet</option>
+													<option value="Vistara">Vistara</option>
+													<option value="Air Asia">Air Asia</option>
+													<option value="GoAir">GoAir</option>
+													<option value="Multiple carriers Premium economy">Multiple carriers
+														Premium economy
+													</option>
+													<option value="Jet Airways Business">Jet Airways Business</option>
+													<option value="Vistara Premium economy">Vistara Premium economy
+													</option>
+													<option value="Trujet">Trujet</option>
+												</select>
+												<div class="valid-feedback">
+													Looks good!
+												</div>
+												<div class="invalid-feedback">
+													Please provide a valid city.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Button -->
+							<button type="submit"
+								class="card-btn btn btn-block btn-lg btn-primary btn-royal-blue btn-calculate btn-no-border text-uppercase shadow lift">
+								Calculate
+								</buttom>
+						</form>
+
+					</div>
+
+				</div>
+
+				<div class="col-12 col-md-6 ml-md-n3">
+					{% if output %}
+					<!-- Card -->
+					<div class="card rounded-lg shadow-lg prediction-card">
+
+						<!-- Body -->
+						<div class="card-body py-6 py-md-8">
+							<div class="row justify-content-center">
+								<div class="col-12 col-xl-10 dollar-bg">
+
+									<!-- Badge -->
+									<p style="font-size: medium">Your Flight price is Rs.
+										{{ output }}
+									</p>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="row justify-content-center text-muted">
+				<div class="mr-3">
+					<a class="text-blue-mute" target="_blank" href="https://github.com/Ganseh"><i
+							class="fab fa-github"></i></a>
+				</div class="mr-3">
+				<div class="mr-3">
+					<a class="text-blue-mute" target="_blank"
+						href="https://www.linkedin.com/in/ganesh-hegde-2baaa6155/"><i
+							class="fab fa-linkedin-in"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Form Validation javascript -->
+	<script>
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(function () {
+			'use strict';
+			window.addEventListener('load', function () {
+				// Fetch all the forms we want to apply custom Bootstrap validation styles to
+				var forms = document.getElementsByClassName('needs-validation');
+				// Loop over them and prevent submission
+				var validation = Array.prototype.filter.call(forms, function (form) {
+					form.addEventListener('submit', function (event) {
+						if (form.checkValidity() === false) {
+							event.preventDefault();
+							event.stopPropagation();
+						}
+						form.classList.add('was-validated');
+					}, false);
+				});
+			}, false);
+		})();
+	</script>
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+		</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+		</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+		</script>
+</body>
+
+</html>
